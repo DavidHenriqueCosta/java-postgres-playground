@@ -1,6 +1,7 @@
 package com.example;
 
 class Cliente {
+    private String nome;
     private double renda;
     private char sexo;
     private int anoNascimento;
@@ -16,19 +17,10 @@ class Cliente {
             else especial = false;
     };
     
-    public Cliente(double renda, char sexo, int anoNascimento){
-        System.out.println(" Criando um novo objeto com parâmetro .");
-    
-        
-        this.anoNascimento = anoNascimento;
-        if (sexo == 'M' || sexo == 'm' || sexo == 'f' || sexo == 'F')
-            this.sexo = sexo;
-        else System.out.println("O sexo informado é inválido use M ou F.");
-
-        if (renda >= 0)
-            this.renda = renda;
-            else System.out.println("O valor da renda deve ser maior que 0");
-        
+    public Cliente(double renda, char sexo, int anoNascimento,String nome){
+        this();
+        setRenda(renda);
+        setSexo(sexo);
     };
 
     public char getSexo() {
@@ -63,4 +55,14 @@ class Cliente {
     public void setEspecial(boolean especial) {
         this.especial = especial;
     }
+    public String getNome() {
+        return nome;
+
+    }
+    public void setNome(String nome) {
+        if(nome.isBlank())
+            System.out.println(" O nome é obrigatório !");
+        else this.nome = nome.trim().toUpperCase();
+    }
+    
 }
