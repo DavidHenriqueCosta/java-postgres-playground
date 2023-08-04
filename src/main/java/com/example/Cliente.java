@@ -6,11 +6,19 @@ class Cliente {
     private char sexo;
     private int anoNascimento;
     private boolean especial;
+    private String cpf;
 
     
 
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
     public Cliente(){
-        System.out.println(" Criando um novo objeto sem parâmetro .");
         double aleatorio = Math.random();
         if (aleatorio > 0.5)
             especial = true;
@@ -28,6 +36,7 @@ class Cliente {
     }
     public void setSexo(char sexo) {
         if (sexo == 'M' || sexo == 'm' || sexo == 'f' || sexo == 'F')
+            
             this.sexo = sexo;
         else System.out.println("O sexo informado é inválido use M ou F.");
 

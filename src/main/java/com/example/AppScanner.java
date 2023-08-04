@@ -1,14 +1,32 @@
 package com.example;
 
+import java.util.Scanner;
+
 public class AppScanner {
     
     
     public static void main(String[] args) {
         Cliente cliente1 = new Cliente();
-        cliente1.setRenda(10000);
-        cliente1.setSexo('M');
-        cliente1.setAnoNascimento(1991);
-        cliente1.setNome ("David Costa");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(" Digite o nome: ");
+        cliente1.setNome(scanner.nextLine());
+
+        System.out.println(" Digite o ano de nascimento: ");
+        cliente1.setAnoNascimento(scanner.nextInt());
+        scanner.nextLine();
+        System.out.println(" Digite o sexo, (utilize 'm' para masculino e 'f' para feminino):");
+        String sexo = scanner.nextLine();
+        cliente1.setSexo(sexo.charAt(0));
+
+        
+        System.out.println(" Digite a sua renda ");
+        cliente1.setRenda(scanner.nextDouble());
+
+
+
+
+      
+        
        
 
         System.out.println("renda "+ cliente1.getRenda());
@@ -17,6 +35,8 @@ public class AppScanner {
         System.out.println("É um cliente especial ?"+ cliente1.isEspecial());
         System.out.println("Olá "+ cliente1.getNome());
         System.out.println();
+
+        
       
     }    
 }
